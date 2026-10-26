@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oliver Twist · Clase de inglés desde cero</title>
+<style>
+:root{--bg:#f6f3ff;--cd:#fff;--tx:#1f1b3a;--mu:#5b5780;--p:#7c3aed;--o:#f97316;--g:#059669;--b:#0284c7;--k:#db2777;--ln:#ddd6fe;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15122b;--cd:#221e44;--tx:#f4f1ff;--mu:#b9b3e6;--ln:#3b3470;--p:#a78bfa;--o:#fb923c;--g:#34d399;--b:#38bdf8;--k:#f472b6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15122b;--cd:#221e44;--tx:#f4f1ff;--mu:#b9b3e6;--ln:#3b3470;--p:#a78bfa;--o:#fb923c;--g:#34d399;--b:#38bdf8;--k:#f472b6;color-scheme:dark}
+html{font-size:20px;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4rem)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--p);z-index:10}
+[hidden]{display:none!important}
+header{background:linear-gradient(135deg,#7c3aed,#db2777 60%,#f97316);color:#fff;padding:2.5rem 1.2rem;text-align:center}
+header h1{margin:.2rem 0;font-size:2.2rem;line-height:1.2}
+header p{margin:.3rem auto;max-width:34rem;font-size:1.1rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--cd);border-bottom:2px solid var(--ln);display:flex;gap:.4rem;overflow-x:auto;padding:.5rem .7rem;align-items:center}
+nav a{white-space:nowrap;text-decoration:none;color:var(--tx);background:var(--bg);border-radius:99px;padding:.3rem .8rem;font-weight:700;font-size:.85rem;border:2px solid var(--ln)}
+nav label{white-space:nowrap;font-size:.85rem;font-weight:700;margin-left:auto;padding-left:.5rem}
+main{max-width:900px;margin:0 auto;padding:0 .9rem 3rem}
+.card{background:var(--cd);border-radius:24px;border-top:10px solid var(--c,var(--p));padding:1.3rem;margin:1.6rem 0;box-shadow:0 6px 20px rgba(80,50,160,.12)}
+.card h2{margin:.1rem 0 .6rem;font-size:1.6rem;color:var(--c,var(--p))}
+h3{margin:1.2rem 0 .4rem;font-size:1.2rem}
+.tip{background:var(--bg);border-left:6px solid var(--c,var(--p));border-radius:12px;padding:.7rem 1rem;margin:.8rem 0}
+small{color:var(--mu);font-size:.8rem}
+.en{font-weight:700;color:var(--b)}
+.sp{border:0;background:var(--o);color:#fff;border-radius:50%;width:1.9rem;height:1.9rem;font-size:.9rem;cursor:pointer;margin-left:.35rem;vertical-align:middle;padding:0}
+.sp.pl,.btn.pl{outline:4px solid var(--g);animation:pu 1s infinite}
+@keyframes pu{50%{opacity:.6}}
+.btn{border:0;background:var(--p);color:#fff;font-size:1rem;font-weight:700;border-radius:14px;padding:.7rem 1.2rem;cursor:pointer;margin:.4rem .3rem .4rem 0;font-family:inherit}
+.btn.big{background:var(--k);font-size:1.15rem;padding:.9rem 1.4rem}
+.btn.alt{background:var(--g)}
+.player{background:var(--bg);border-radius:18px;padding:.8rem;margin:.8rem 0;border:2px dashed var(--k)}
+details{margin-top:.5rem}summary{cursor:pointer;font-weight:700;color:var(--p)}
+.tr{font-size:1.1rem;margin:.5rem 0}
+.line{margin:.5rem 0;font-size:1.15rem}
+.q{margin:1rem 0;padding:.8rem;border-radius:16px;background:var(--bg)}
+.q p{margin:0 0 .4rem;font-size:1.1rem}
+.op{display:flex;align-items:center;gap:.6rem;padding:.55rem .7rem;margin:.3rem 0;border:2px solid var(--ln);border-radius:12px;cursor:pointer;background:var(--cd)}
+.op input{width:1.3rem;height:1.3rem;accent-color:var(--p);flex:none}
+.ok{font-weight:700;color:var(--g)}
+input[type=text],textarea{width:100%;font:inherit;font-size:1.05rem;padding:.6rem .8rem;border:2px solid var(--ln);border-radius:12px;background:var(--cd);color:var(--tx);margin:.3rem 0}
+input.bl{width:9rem;display:inline-block;margin:0 .2rem}
+textarea{min-height:7rem;resize:vertical}
+input:focus,textarea:focus{outline:3px solid var(--o);border-color:var(--o)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:20rem}
+th,td{border:2px solid var(--ln);padding:.5rem;text-align:center}
+th{background:var(--p);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:.7rem}
+.fc{background:linear-gradient(135deg,var(--bg),var(--cd));border:3px solid var(--o);border-radius:18px;padding:.8rem;text-align:center;cursor:pointer;min-height:7.5rem;font-size:1.15rem}
+.fc .bk span{font-weight:700;color:var(--g)}
+.mc{font:inherit;font-size:1rem;font-weight:700;min-height:4.5rem;border:3px solid var(--p);border-radius:16px;background:var(--p);color:#fff;cursor:pointer;padding:.3rem}
+.mc.up{background:var(--cd);color:var(--tx)}
+.mc.hit{background:var(--g);color:#fff;border-color:var(--g)}
+.lot{font-size:1.2rem;padding:1rem;border-radius:16px;background:var(--bg);border:3px dashed var(--o);min-height:5rem;margin-top:.6rem}
+</style>
+</head>
+<body>
+<header>
+<div style="font-size:3rem">📖</div>
+<h1>Oliver Twist</h1>
+<p>Clase 1 · Inglés desde cero con una historia clásica</p>
+<p><small style="color:#fff">Capítulos: “Oliver enters the world” y “Oliver gets a job”</small></p>
+</header>
+<nav>
+<a href="#s1">1 Vocabulario</a><a href="#s2">2 Gramática</a><a href="#s3">3 Listening</a><a href="#s4">4 Reading</a><a href="#s5">5 Writing</a><a href="#s6">6 Juegos</a><a href="#s7">7 Quiz</a><a href="#s8">8 Tarea</a>
+<label><input type="checkbox" id="slow"> 🐢 Voz lenta</label>
+</nav>
+<main>
+
+<section class="card" style="--c:var(--k)">
+<h2>👋 ¡Bienvenido!</h2>
+<p>Hoy aprenderás tus primeras palabras y frases en inglés con la historia de <b>Oliver Twist</b>, un niño huérfano que nació en una casa para gente pobre.</p>
+<div class="tip"><b>Cómo usar esta clase:</b><br>🔊 Toca el botón naranja junto a cualquier texto en inglés para escucharlo (inglés americano).<br>🐢 Activa “Voz lenta” arriba si necesitas escuchar más despacio.<br>✍️ Escribe en las cajas; lo que escribas se guarda en tu dispositivo.</div>
+<p><b>Hoy vas a aprender a:</b> decir cómo estás (<span class="en">I am hungry</span>), hablar del pasado con <span class="en">was</span>, entender una historia corta y escribir tus primeras oraciones.</p>
+</section>
+
+<section class="card" id="s1" style="--c:var(--o)">
+<h2>1 · Vocabulario 🧠</h2>
+<p>Toca cada tarjeta para ver su significado en español. Toca 🔊 para escuchar la palabra.</p>
+<div class="grid" id="fcs"></div>
+</section>
+
+<section class="card" id="s2" style="--c:var(--b)">
+<h2>2 · Gramática: el verbo “to be” 🧩</h2>
+<p>El verbo <b>to be</b> significa <b>ser</b> o <b>estar</b>. Cambia según la persona y el tiempo:</p>
+<div class="wrap"><table><tr><th>Persona</th><th>Pasado</th><th>Presente</th></tr>
+<tr><td>I (yo)</td><td class="en">was</td><td class="en">am</td></tr>
+<tr><td>He / She / It (él / ella / eso)</td><td class="en">was</td><td class="en">is</td></tr>
+<tr><td>You / We / They (tú o ustedes / nosotros / ellos)</td><td class="en">were</td><td class="en">are</td></tr></table></div>
+<h3>Ejemplos</h3>
+<p class="line"><span class="en">Oliver was born in a workhouse.</span><br><small>Oliver nació en una casa de trabajo. (“was born” = nació)</small></p>
+<p class="line"><span class="en">Oliver is sad.</span><br><small>Oliver está triste.</small></p>
+<p class="line"><span class="en">The boys are hungry.</span><br><small>Los niños tienen hambre. (En inglés se dice “están hambrientos”.)</small></p>
+<div class="tip"><b>Frase útil:</b> <span class="en">Please, sir, I want some more.</span><br><small>“Por favor, señor, quiero un poco más.” Es la frase más famosa de Oliver.</small></div>
+</section>
+
+<section class="card" id="s3" style="--c:var(--g)">
+<h2>3 · Listening 🎧</h2>
+<p><b>Paso 1:</b> Escucha el audio. Puedes repetirlo las veces que quieras.<br><b>Paso 2:</b> Responde las preguntas.<br><b>Paso 3:</b> Abre la transcripción para leer lo que escuchaste.</p>
+<div class="player" data-t="Oliver Twist was born in a workhouse. His mother was very sick. She died after Oliver was born. Oliver was alone. He lived in an orphanage. He was small, pale and thin. He was always hungry. Then he went to the workhouse. The boys had soup every day. One night, Oliver said, “Please, sir, I want some more.”"></div>
+<div id="q1"></div>
+</section>
+
+<section class="card" id="s4" style="--c:var(--p)">
+<h2>4 · Reading 📚</h2>
+<p>Lee la historia. Toca 🔊 en cada línea para escuchar esa oración.</p>
+<div class="player" data-nt="1" data-t="Mr Bumble talks to Mr Sowerberry. Mr Sowerberry is an undertaker. Mr Bumble says, “Do you want a boy? We pay five pounds.” “Yes,” says Mr Sowerberry. Oliver goes to the undertaker’s shop. He sleeps near the coffins. He is sad. Noah is a boy in the shop. Noah is mean to Oliver. Oliver’s job is to go to funerals and look sad."></div>
+<div class="line"><span class="en">Mr Bumble talks to Mr Sowerberry.</span></div>
+<div class="line"><span class="en">Mr Sowerberry is an undertaker.</span></div>
+<div class="line"><span class="en">Mr Bumble says, “Do you want a boy? We pay five pounds.”</span></div>
+<div class="line"><span class="en">“Yes,” says Mr Sowerberry.</span></div>
+<div class="line"><span class="en">Oliver goes to the undertaker’s shop.</span></div>
+<div class="line"><span class="en">He sleeps near the coffins. He is sad.</span></div>
+<div class="line"><span class="en">Noah is a boy in the shop. Noah is mean to Oliver.</span></div>
+<div class="line"><span class="en">Oliver’s job is to go to funerals and look sad.</span></div>
+<div class="tip"><b>Palabras nuevas:</b> <i>talks to</i> = habla con · <i>pay</i> = pagar · <i>shop</i> = tienda · <i>sleeps</i> = duerme · <i>near</i> = cerca de · <i>mean</i> = malo, cruel · <i>funerals</i> = funerales</div>
+<h3>¿Verdadero o falso?</h3>
+<div id="q2"></div>
+<h3>Responde en inglés con una palabra o frase corta</h3>
+<p class="line"><span class="en">Where does Oliver sleep?</span> <small>(¿Dónde duerme Oliver?)</small></p>
+<input type="text" placeholder="Escribe tu respuesta aquí…">
+</section>
+
+<section class="card" id="s5" style="--c:var(--k)">
+<h2>5 · Writing ✍️</h2>
+<h3>A. Completa las oraciones</h3>
+<p class="line"><span class="en">Oliver</span> <input class="bl" type="text" aria-label="espacio 1"> <span class="en">born in a workhouse.</span><br><small>Pista: pasado del verbo “to be” para él.</small></p>
+<p class="line"><span class="en">The boys had</span> <input class="bl" type="text" aria-label="espacio 2"> <span class="en">every day.</span><br><small>Pista: comida caliente y líquida, en un plato hondo.</small></p>
+<p class="line"><span class="en">Mr Sowerberry is an</span> <input class="bl" type="text" aria-label="espacio 3"><span class="en">.</span><br><small>Pista: la persona que se ocupa de los funerales.</small></p>
+<h3>B. Traduce al inglés</h3>
+<p class="line">“Yo tengo hambre.” <input type="text" placeholder="Escribe en inglés…"></p>
+<p class="line">“Oliver está triste.” <input type="text" placeholder="Escribe en inglés…"></p>
+<h3>C. Escribe 3 oraciones sobre Oliver</h3>
+<p><small>Puedes usar: was, is, hungry, sad, small, soup, job.</small></p>
+<textarea placeholder="1. …&#10;2. …&#10;3. …"></textarea>
+</section>
+
+<section class="card" id="s6" style="--c:var(--o)">
+<h2>6 · Juegos 🎮</h2>
+<h3>🃏 Memoria: une cada palabra con su significado</h3>
+<p><small>Toca dos cartas. Si son pareja inglés–español, se quedan abiertas.</small></p>
+<div class="grid" id="mem" style="grid-template-columns:repeat(auto-fill,minmax(8rem,1fr))"></div>
+<p><b id="mv">Intentos: 0</b> <button class="btn alt" id="rs">🔄 Reiniciar</button></p>
+<h3>🎲 “Drawing Lots”: saca un papelito</h3>
+<p>En la historia, los niños sacaron papelitos para decidir quién pediría más sopa. Toca el botón, escucha la pregunta y <b>respóndela en voz alta</b>.</p>
+<button class="btn big" id="lotb">🎲 Sacar papelito</button>
+<div class="lot" id="lot">Aquí aparecerá tu pregunta…</div>
+</section>
+
+<section class="card" id="s7" style="--c:var(--b)">
+<h2>7 · Quiz relámpago ⚡</h2>
+<p>Elige una respuesta en cada pregunta y pulsa “Guardar respuestas”.</p>
+<div id="q3"></div>
+</section>
+
+<section class="card" id="s8" style="--c:var(--g);border-top-width:14px">
+<h2>🏠 Tarea</h2>
+<p>Todo lo que necesitas está aquí. No tienes que buscar nada afuera. ¡Tú puedes!</p>
+<h3>Listening 🎧</h3>
+<p>Escucha el audio y responde.</p>
+<div class="player" data-t="Mrs Sowerberry sees Oliver. She says, “He is very small!” She gives him some old meat. Then she shows him his bed. The bed is on the floor of the shop. There are coffins all around. Oliver is alone and he is sad."></div>
+<div id="q4"></div>
+<h3>Reading 📚</h3>
+<p>Lee el texto (toca 🔊 para escucharlo) y responde.</p>
+<div class="player" data-t="Oliver wakes up early. He is tired. He has a small breakfast. Then he goes to a funeral with Mr Sowerberry. He wears black clothes. He stands and looks sad. After the funeral, Oliver walks home. He is very hungry."></div>
+<div class="tip"><b>Palabras nuevas:</b> <i>wakes up</i> = se despierta · <i>early</i> = temprano · <i>tired</i> = cansado · <i>breakfast</i> = desayuno · <i>wears</i> = lleva puesto · <i>black</i> = negro · <i>walks home</i> = camina a casa</div>
+<div id="q5"></div>
+<p class="line"><span class="en">How does Oliver feel at the end?</span> <small>(¿Cómo se siente Oliver al final?)</small></p>
+<input type="text" placeholder="Escribe tu respuesta aquí…">
+<h3>Writing ✍️</h3>
+<p class="line"><span class="en">Noah</span> <input class="bl" type="text" aria-label="tarea 1"> <span class="en">mean to Oliver.</span><br><small>Pista: presente del verbo “to be” para él.</small></p>
+<p class="line"><span class="en">Oliver’s bed is on the</span> <input class="bl" type="text" aria-label="tarea 2"><span class="en">.</span><br><small>Pista: la parte de abajo de una habitación, donde pisas.</small></p>
+<p class="line">Traduce: “Él está cansado.” <input type="text" placeholder="Escribe en inglés…"></p>
+<p class="line">Ahora escribe 3 oraciones sobre ti. Empieza con <span class="en">I am…</span>, <span class="en">I have…</span> y <span class="en">I want…</span></p>
+<textarea placeholder="I am …&#10;I have …&#10;I want …"></textarea>
+<p class="ok">🌟 ¡Excelente trabajo hoy! Practica un poco cada día y verás cómo avanzas.</p>
+</section>
+
+</main>
+<script>
+var synth=window.speechSynthesis,cur=null;
+function say(t,btn){
+ if(!synth){alert('Tu navegador no permite reproducir audio. Prueba con Chrome, Edge o Safari.');return;}
+ var same=btn&&cur===btn;
+ synth.cancel();
+ document.querySelectorAll('.pl').forEach(function(b){b.classList.remove('pl')});
+ cur=null;
+ if(same)return;
+ var u=new SpeechSynthesisUtterance(t);
+ u.lang='en-US';
+ u.rate=document.getElementById('slow').checked?0.6:0.9;
+ var vs=synth.getVoices(),v=null;
+ for(var i=0;i<vs.length;i++){if(vs[i].lang==='en-US'||vs[i].lang==='en_US'){v=vs[i];break;}}
+ if(v)u.voice=v;
+ if(btn){cur=btn;btn.classList.add('pl');}
+ u.onend=u.onerror=function(){if(btn){btn.classList.remove('pl');if(cur===btn)cur=null;}};
+ synth.speak(u);
+}
+var V=[
+['workhouse','casa de trabajo (lugar para gente muy pobre)','Oliver was born in a workhouse.'],
+['orphan','huérfano / huérfana','Oliver is an orphan.'],
+['hungry','con hambre','The boys are hungry.'],
+['soup','sopa','They eat soup.'],
+['undertaker','funerario (quien se ocupa de los funerales)','Mr Sowerberry is an undertaker.'],
+['coffin','ataúd','Oliver sleeps near the coffins.'],
+['job','trabajo, empleo','Oliver gets a job.'],
+['sad','triste','Oliver is sad.']
+];
+var LOTS=[
+['Are you hungry now?','¿Tienes hambre ahora?'],
+['Do you like soup?','¿Te gusta la sopa?'],
+['Are you tired today?','¿Estás cansado hoy?'],
+['Do you have a job?','¿Tienes un trabajo?'],
+['What do you want?','¿Qué quieres?'],
+['Are you happy or sad?','¿Estás feliz o triste?']
+];
+function mk(id,items){
+ var c=document.getElementById(id);
+ items.forEach(function(it,i){
+  var d=document.createElement('div');d.className='q';
+  var h='<p><b>'+(i+1)+'.</b> <span class="en">'+it.q+'</span>'+(it.es?'<br><small>'+it.es+'</small>':'')+'</p>';
+  it.o.forEach(function(o){
+   var p=o.split('|');
+   h+='<label class="op"><input type="radio" name="'+id+i+'"><span><span class="en">'+p[0]+'</span>'+(p[1]?' <small>('+p[1]+')</small>':'')+'</span></label>';
+  });
+  d.innerHTML=h;c.appendChild(d);
+ });
+ var b=document.createElement('button');b.className='btn';b.textContent='Guardar respuestas';
+ var m=document.createElement('p');m.className='ok';
+ b.onclick=function(){
+  var n=items.length,seen={};
+  c.querySelectorAll('input:checked').forEach(function(x){seen[x.name]=1;});
+  var a=Object.keys(seen).length;
+  m.textContent=a<n?'Te faltan '+(n-a)+' pregunta(s) por responder.':'¡Respuestas guardadas! Tu profesor las revisará contigo. 🎉';
+ };
+ c.appendChild(b);c.appendChild(m);
+}
+var TF=['True|Verdadero','False|Falso'];
+mk('q1',[
+{q:'Where was Oliver born?',es:'¿Dónde nació Oliver?',o:['In a workhouse','In a school','In a farm']},
+{q:'How was Oliver?',es:'¿Cómo estaba Oliver siempre?',o:['Always hungry','Always happy','Always rich']},
+{q:'What did the boys eat every day?',es:'¿Qué comían los niños todos los días?',o:['Soup','Pizza','Fish']}
+]);
+mk('q2',[
+{q:'Mr Sowerberry is a doctor.',o:TF},
+{q:'Oliver sleeps near the coffins.',o:TF},
+{q:'Noah is nice to Oliver.',o:TF},
+{q:'Oliver’s job is to look sad at funerals.',o:TF}
+]);
+mk('q3',[
+{q:'What does “orphan” mean?',es:'¿Qué significa “orphan”?',o:['Huérfano','Doctor','Con hambre']},
+{q:'What does “coffin” mean?',es:'¿Qué significa “coffin”?',o:['Sopa','Ataúd','Tienda']},
+{q:'Oliver ___ born in a workhouse.',es:'Elige la palabra correcta.',o:['was','were','is']},
+{q:'I ___ hungry.',es:'Elige la palabra correcta.',o:['is','am','are']},
+{q:'Who is Mr Sowerberry?',es:'¿Quién es el señor Sowerberry?',o:['An undertaker','A nurse','A police officer']}
+]);
+mk('q4',[
+{q:'Who sees Oliver?',es:'¿Quién ve a Oliver?',o:['Mrs Sowerberry','Mr Bumble','Noah']},
+{q:'What does she give him?',es:'¿Qué le da ella?',o:['Old meat','A coin','A book']},
+{q:'Where is his bed?',es:'¿Dónde está su cama?',o:['On the floor of the shop','In a big house','In a school']}
+]);
+mk('q5',[
+{q:'Oliver wakes up late.',o:TF},
+{q:'Oliver wears black clothes.',o:TF},
+{q:'Oliver goes to a funeral.',o:TF}
+]);
+document.querySelectorAll('.player').forEach(function(p){
+ var t=p.dataset.t;
+ var b=document.createElement('button');b.className='btn big';b.textContent='▶ Escuchar / detener audio';
+ b.onclick=function(){say(t,b);};
+ p.appendChild(b);
+ if(!p.dataset.nt){
+  var d=document.createElement('details');
+  var s=document.createElement('summary');s.textContent='Ver transcripción (texto del audio)';
+  var x=document.createElement('p');x.className='tr';x.textContent=t;
+  d.appendChild(s);d.appendChild(x);p.appendChild(d);
+ }
+});
+var fc=document.getElementById('fcs');
+V.forEach(function(v){
+ var d=document.createElement('div');d.className='fc';
+ d.innerHTML='<b class="en">'+v[0]+'</b><div class="bk" hidden><span>'+v[1]+'</span><br><small class="en">'+v[2]+'</small></div><small class="tp">Toca para ver el significado</small>';
+ d.onclick=function(e){
+  if(e.target.closest('.sp'))return;
+  var h=d.querySelector('.bk');h.hidden=!h.hidden;d.querySelector('.tp').hidden=!h.hidden;
+ };
+ fc.appendChild(d);
+});
+function memory(){
+ var g=document.getElementById('mem'),cards=[],first=null,lock=false,moves=0;
+ V.slice(0,6).forEach(function(p){cards.push({k:p[0],t:p[0]});cards.push({k:p[0],t:p[1].split(' (')[0]});});
+ cards.sort(function(){return Math.random()-0.5;});
+ g.innerHTML='';document.getElementById('mv').textContent='Intentos: 0';
+ cards.forEach(function(c){
+  var b=document.createElement('button');b.className='mc';b.textContent='❓';
+  b.onclick=function(){
+   if(lock||b.classList.contains('up')||b.classList.contains('hit'))return;
+   b.classList.add('up');b.textContent=c.t;
+   if(c.t===c.k)say(c.t);
+   if(!first){first={b:b,c:c};return;}
+   moves++;document.getElementById('mv').textContent='Intentos: '+moves;
+   var f=first;first=null;
+   if(f.c.k===c.k){f.b.className='mc hit';b.className='mc hit';}
+   else{lock=true;setTimeout(function(){f.b.className='mc';f.b.textContent='❓';b.className='mc';b.textContent='❓';lock=false;},900);}
+  };
+  g.appendChild(b);
+ });
+}
+document.getElementById('rs').onclick=memory;memory();
+document.getElementById('lotb').onclick=function(){
+ var r=LOTS[Math.floor(Math.random()*LOTS.length)];
+ var l=document.getElementById('lot');
+ l.innerHTML='<span class="en" id="lq">'+r[0]+'</span><br><small>'+r[1]+'</small>';
+ addSp(l.querySelector('.en'));
+ say(r[0]);
+};
+function addSp(el){
+ var t=el.textContent.trim();
+ var b=document.createElement('button');b.className='sp';b.type='button';b.textContent='🔊';b.setAttribute('aria-label','Escuchar');
+ b.onclick=function(e){e.stopPropagation();say(t,b);};
+ el.appendChild(b);
+}
+document.querySelectorAll('.en').forEach(addSp);
+var fields=document.querySelectorAll('input[type=text],textarea');
+fields.forEach(function(f,i){
+ var k='ot_'+i;
+ try{var v=localStorage.getItem(k);if(v)f.value=v;}catch(e){}
+ f.addEventListener('input',function(){try{localStorage.setItem(k,f.value);}catch(e){}});
+});
+if(synth&&synth.onvoiceschanged!==undefined)synth.onvoiceschanged=function(){};
+</script>
+</body>
+</html>
